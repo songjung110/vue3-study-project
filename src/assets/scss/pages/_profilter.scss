@@ -1,0 +1,19 @@
+@charset 'utf-8';
+
+.page-profilter {
+  form {
+    display: flex;
+    justify-content: space-between;
+    > .comp {
+      width: calc(100% - 6rem);
+    }
+  }
+
+  .filter-list {
+    display: flex;
+    justify-content: start;
+    &__item {
+      margin-right: 1rem;
+    }
+  }
+}

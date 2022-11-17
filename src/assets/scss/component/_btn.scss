@@ -1,0 +1,48 @@
+@charset 'utf-8';
+
+.comp-btn {
+  // default - 배경X / 클릭영역만 잡힘.
+  display: inline-block;
+  height: 4.5rem;
+  line-height: 4.5rem;
+  color: $fontClr_100;
+  padding: 0 1rem;
+  font-size: 1.5rem;
+  box-sizing: border-box;
+
+  // 형태 - round
+  &__is-round {
+    background: $compbackClr2;
+    border-radius: 10rem;
+  }
+  // 형태 - square
+  &__is-square {
+    background: $compbackClr2;
+    border-radius: 1rem;
+  }
+
+  // size - large
+  &__is-large {
+    height: 5rem;
+  }
+
+  // 아이콘만 있는 경우
+  &__is-only-icon {
+    width: 4.5rem;
+    padding: 0 0;
+    text-align: center;
+
+    > .comp-btn__txt {
+      display: inline-block;
+      text-indent: -9999px;
+    }
+
+    &.comp-btn__is-large {
+      width: 5rem;
+      line-height: 5rem;
+    }
+  }
+  // 아이콘이 추가되는 경우
+  &__is-add-icon {
+  }
+}

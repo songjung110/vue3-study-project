@@ -1,0 +1,35 @@
+@charset 'utf-8';
+
+body {
+  font-family: "Inter";
+  color: $fontClr_100;
+  background: $bodybackClr;
+  font-size: 0.875rem;
+}
+
+h2 {
+  font-size: 2.8rem;
+}
+h3 {
+  font-weight: normal;
+  font-size: 1.7rem;
+}
+
+/*
+
+    Font size
+
+    [html 작성 예]
+    <div class="fz-20"></div>
+
+    [style 변환시]
+    <div style="font-size:2rem"></div>
+
+*/
+.fs {
+  @for $i from 0 through 30 {
+    &#{"-" + $i} {
+      font-size: #{$i * 0.1}rem !important;
+    }
+  }
+}

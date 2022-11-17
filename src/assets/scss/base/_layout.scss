@@ -1,0 +1,27 @@
+@charset 'utf-8';
+
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 10;
+  > nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 2rem 0;
+  }
+}
+
+main {
+  padding: 20px;
+}
+
+.l-section {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

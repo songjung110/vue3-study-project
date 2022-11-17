@@ -1,0 +1,26 @@
+@charset 'utf-8';
+
+.comp {
+  input[type="text"] {
+    color: $fontClr_50;
+    background: $compbackClr2;
+    width: 100%;
+    height: 5rem;
+    padding-left: 4.5rem;
+    line-height: 5rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    box-sizing: border-box;
+  }
+
+  input[type="checkbox"] {
+    @include customComponent();
+
+    &:checked {
+      & + label {
+        background: $pointClr;
+      }
+    }
+  }
+}

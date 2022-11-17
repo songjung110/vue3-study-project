@@ -1,0 +1,30 @@
+@charset 'utf-8';
+
+$pointClr: #9775fa;
+
+$fontClr_100: #ffffff;
+$fontClr_50: #8f959e;
+$fontClr_00: #000000;
+
+$bodybackClr: #1b262c;
+$compbackClr: #29363d;
+$compbackClr2: #222e34;
+
+.is-point-color {
+  color: $pointClr;
+
+  &__back {
+    color: #ffffff;
+    background: $pointClr !important;
+  }
+}
+
+.is-font-color100 {
+  color: $fontClr_100;
+}
+.is-font-color50 {
+  color: $fontClr_50;
+}
+.is-font-color00 {
+  color: $fontClr_00;
+}
