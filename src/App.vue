@@ -179,3 +179,11 @@ export default {
     </ul>
   </nav>
 </template>
+
+<style lang="scss" scoped>
+.page-profilter {
+  > .l-section__header {
+    background: pink !important;
+  }
+}
+</style>
