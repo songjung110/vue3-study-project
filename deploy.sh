@@ -14,7 +14,7 @@ git ls-files --stage dist
 git rm --cached dist
 
 # gitsubmodule 재연결
-git submodule add https://github.com/songjung110/vue3-study-project__buildsub.git dist
+git submodule add https://github.com/songjung110/songjung110.github.io.git dist
 git submodule update --remote --recursive
 
 # VUE 빌드파일 생성

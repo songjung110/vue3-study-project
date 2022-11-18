@@ -1,7 +1,11 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
+// import { RouterLink, RouterView } from "vue-router";
+// 섹션 구성용 컴포넌트
+import sectionComponent from "./components/sectionCOMP.vue";
+
+// 컨텐츠용 컴포넌트
 import mainCheckbox from "./components/mainCheckbox.vue";
-import productCard from "./views/productCard.vue";
+import productCard from "./components/productCard.vue";
 </script>
 <script>
 export default {
@@ -67,7 +71,12 @@ export default {
     };
   },
   components: {
+    // 섹션 구성용 컴포넌트
+    sectionComponent,
+
+    // 컨텐츠용 컴포넌트
     mainCheckbox,
+    productCard,
   },
 };
 </script>
@@ -110,26 +119,19 @@ export default {
       </form>
     </section>
 
-    <section class="l-section">
-      <div class="l-section__header">
-        <h3>Choose Brand</h3>
-        <div class="l-section__header__right">
-          <button type="button">
-            <span class="is-font-color50 fs-13">View All</span>
-          </button>
-        </div>
-      </div>
-      <div class="l-section__content">
-        <div class="scroll-container filter-list">
-          <!-- for 문 돌릴 영역 -->
+    <section-component>
+      <template #title><h3>Choose Brand</h3></template>
+      <div class="scroll-container filter-list">
+        <template #default>
+          123123
           <main-checkbox
             v-for="(brand, index) in brands"
             :idx="brand.id"
             :name="brand.name"
           ></main-checkbox>
-        </div>
+        </template>
       </div>
-    </section>
+    </section-component>
 
     <section class="l-section">
       <div class="l-section__header">
