@@ -4,6 +4,8 @@
   form {
     display: flex;
     justify-content: space-between;
+    margin-top: 1.5rem;
+
     > .comp {
       width: calc(100% - 6rem);
     }

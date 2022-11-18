@@ -261,6 +261,10 @@ h3 {
   font-size: 3rem !important;
 }
 
+.scroll-container {
+  overflow: scroll;
+}
+
 header {
   position: -webkit-sticky;
   position: sticky;
@@ -285,6 +289,10 @@ main {
   padding: 20px;
 }
 
+.l-section {
+  margin-bottom: 1.5rem;
+}
+
 .l-section__header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -295,6 +303,7 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 1.5rem;
 }
 
 .comp-btn {
@@ -367,6 +376,10 @@ main {
   z-index: 1;
 }
 
+.comp input[type="checkbox"] + label {
+  cursor: pointer;
+}
+
 .comp input[type="checkbox"]:checked + label {
   background: #9775fa;
 }
@@ -378,6 +391,7 @@ main {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-top: 1.5rem;
 }
 
 .page-profilter form > .comp {

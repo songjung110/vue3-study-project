@@ -16,6 +16,9 @@
 
   input[type="checkbox"] {
     @include customComponent();
+    & + label {
+      cursor: pointer;
+    }
 
     &:checked {
       & + label {

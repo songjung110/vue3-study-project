@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-// console.log("AAAA");
+import mainCheckbox from "./components/mainCheckbox.vue";
+import productCard from "./views/productCard.vue";
 </script>
 <script>
 export default {
@@ -11,9 +12,62 @@ export default {
         { id: 1, name: "Nike" },
         { id: 2, name: "Fila" },
         { id: 3, name: "PUMA" },
-        { id: 3, name: "SOME" },
+        { id: 4, name: "SOME" },
+        { id: 5, name: "Adidas2" },
+        { id: 6, name: "Nike2" },
+        { id: 7, name: "Fila2" },
+      ],
+      products: [
+        {
+          id: 0,
+          data: {
+            category: "Nike",
+            title: "Nike Sportswear Club Fleece",
+            price: "99",
+            link: "#",
+          },
+        },
+        {
+          id: 1,
+          data: {
+            category: "Nike",
+            title: "Trail Running Jacket Nike Windrunner",
+            price: "80",
+            link: "#",
+          },
+        },
+        {
+          id: 2,
+          data: {
+            category: "Nike",
+            title: "Real Life Nike Product",
+            price: "17",
+            link: "#",
+          },
+        },
+        {
+          id: 3,
+          data: {
+            category: "PUMA",
+            title: "PUMA NINIZ JORDY cute",
+            price: "39",
+            link: "#",
+          },
+        },
+        {
+          id: 4,
+          data: {
+            category: "FILA",
+            title: "AWESOME FILA",
+            price: "19",
+            link: "#",
+          },
+        },
       ],
     };
+  },
+  components: {
+    mainCheckbox,
   },
 };
 </script>
@@ -38,7 +92,7 @@ export default {
   </header>
 
   <main class="page-profilter">
-    <section>
+    <section class="l-section">
       <h2>Hemendra</h2>
       <span class="is-font-color50 fs-15">Welcome to Stylish</span>
       <form>
@@ -68,16 +122,11 @@ export default {
       <div class="l-section__content">
         <div class="scroll-container filter-list">
           <!-- for 문 돌릴 영역 -->
-          <div class="comp filter-list__item" v-for="brand in brands">
-            <input type="checkbox" id="bradList_00_01" />
-            <label
-              for="bradList_00_01"
-              class="comp-btn comp-btn__is-square comp-btn__is-add-icon"
-            >
-              <span class="comp-btn__icon"></span>
-              <span class="comp-btn__txt">{{ brand.name }}</span>
-            </label>
-          </div>
+          <main-checkbox
+            v-for="(brand, index) in brands"
+            :idx="brand.id"
+            :name="brand.name"
+          ></main-checkbox>
         </div>
       </div>
     </section>
@@ -93,21 +142,10 @@ export default {
       </div>
       <div class="l-section__content">
         <!-- for 문 돌릴 영역 -->
-        <article class="card">
-          <div class="card__img">
-            <a href="">
-              <img src="" alt="" />
-            </a>
-            <button type="button" class="comp-btn comp-btn__is-only-icon">
-              <span class="comp-btn__icon"></span>
-              <span class="comp-btn__txt">favorite</span>
-            </button>
-          </div>
-          <div class="card__txtbox">
-            <a href="" class="">Nike Sportswear Club Fleece</a>
-            <strong class="">$99</strong>
-          </div>
-        </article>
+        <product-card
+          v-for="(product, index) in products"
+          :data="product.data"
+        ></product-card>
       </div>
     </section>
   </main>
