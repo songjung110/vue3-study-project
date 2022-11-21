@@ -1,26 +1,20 @@
 <script setup>
 // import { RouterLink, RouterView } from "vue-router";
+// 공통(레이아웃) 컴포넌트 - 헤더
+import commonHeader from "./layouts/commonHeader.vue";
+import commonNav from "./layouts/commonNav.vue";
+
 // 섹션 구성용 컴포넌트
 import sectionComponent from "./components/sectionCOMP.vue";
-
-// 컨텐츠용 컴포넌트
-import mainCheckbox from "./components/mainCheckbox.vue";
-import productCard from "./components/productCard.vue";
+// 섹션 - 컨텐츠 구성 컴포넌트
+import titleForm from "./views/main/content/titleForm.vue";
+import chooseBrand from "./views/main/content/chooseBrand.vue";
+import newArraival from "./views/main/content/newArraival.vue";
 </script>
 <script>
 export default {
   data() {
     return {
-      brands: [
-        { id: 0, name: "Adidas" },
-        { id: 1, name: "Nike" },
-        { id: 2, name: "Fila" },
-        { id: 3, name: "PUMA" },
-        { id: 4, name: "SOME" },
-        { id: 5, name: "Adidas2" },
-        { id: 6, name: "Nike2" },
-        { id: 7, name: "Fila2" },
-      ],
       products: [
         {
           id: 0,
@@ -71,115 +65,28 @@ export default {
     };
   },
   components: {
+    // 헤더 컴포넌트
+    commonHeader,
+    commonNav,
     // 섹션 구성용 컴포넌트
     sectionComponent,
-
-    // 컨텐츠용 컴포넌트
-    mainCheckbox,
-    productCard,
+    // 섹션 컨텐츠 컴포넌트
+    titleForm,
+    chooseBrand,
+    newArraival,
   },
 };
 </script>
 <template>
-  <header>
-    <nav>
-      <button
-        type="button"
-        class="comp-btn comp-btn__is-round comp-btn__is-only-icon nav-btn"
-      >
-        <span class="comp-btn__txt">menu</span>
-        <span class="comp-btn__icon"></span>
-      </button>
-      <RouterLink
-        to="/shop"
-        class="comp-btn comp-btn__is-round comp-btn__is-only-icon nav-btn"
-      >
-        <span class="comp-btn__txt">shop</span>
-        <span class="comp-btn__icon"></span
-      ></RouterLink>
-    </nav>
-  </header>
+  <common-header></common-header>
 
   <main class="page-profilter">
-    <section class="l-section">
-      <h2>Hemendra</h2>
-      <span class="is-font-color50 fs-15">Welcome to Stylish</span>
-      <form>
-        <div class="comp">
-          <input type="text" id="top_search" placeholder="Search..." />
-          <label for="top_search"></label>
-        </div>
-        <button
-          type="button"
-          class="comp-btn comp-btn__is-square comp-btn__is-only-icon comp-btn__is-large is-point-color__back"
-        >
-          <span class="comp-btn__txt">voice recognition</span>
-          <span class="comp-btn__icon"></span>
-        </button>
-      </form>
-    </section>
-
-    <section-component>
-      <template #title><h3>Choose Brand</h3></template>
-      <div class="scroll-container filter-list">
-        <template #default>
-          123123
-          <main-checkbox
-            v-for="(brand, index) in brands"
-            :idx="brand.id"
-            :name="brand.name"
-          ></main-checkbox>
-        </template>
-      </div>
-    </section-component>
-
-    <section class="l-section">
-      <div class="l-section__header">
-        <h3>New Arraival</h3>
-        <div class="l-section__header__right">
-          <button type="button">
-            <span class="is-font-color50 fs-13">View All</span>
-          </button>
-        </div>
-      </div>
-      <div class="l-section__content">
-        <!-- for 문 돌릴 영역 -->
-        <product-card
-          v-for="(product, index) in products"
-          :data="product.data"
-        ></product-card>
-      </div>
-    </section>
+    <title-form></title-form>
+    <choose-brand></choose-brand>
+    <new-arraival></new-arraival>
   </main>
 
-  <nav class="main-nav">
-    <ul>
-      <li>
-        <a href="#" class="comp-btn comp-btn__is-only-icon nav-btn">
-          <span class="comp-btn__txt">Home</span>
-          <span class="comp-btn__icon"></span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="comp-btn comp-btn__is-only-icon nav-btn">
-          <span class="comp-btn__txt">favorite</span>
-          <span class="comp-btn__icon"></span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="comp-btn comp-btn__is-only-icon nav-btn">
-          <span class="comp-btn__txt">shop</span>
-          <span class="comp-btn__icon"></span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="comp-btn comp-btn__is-only-icon nav-btn">
-          <span class="comp-btn__txt">notebook</span>
-          <span class="comp-btn__icon"></span>
-        </a>
-      </li>
-    </ul>
-  </nav>
+  <common-nav></common-nav>
 </template>
 
 <style lang="scss" scoped>
@@ -187,5 +94,9 @@ export default {
   > .l-section__header {
     background: pink !important;
   }
+}
+
+main {
+  padding: 20px;
 }
 </style>

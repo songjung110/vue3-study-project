@@ -1,7 +1,5 @@
 <script>
-export default {
-  // props: ["idx", "data"],
-};
+// 섹션 - 컨텐츠 구성 컴포넌트
 </script>
 <template>
   <section class="l-section">
@@ -18,3 +16,15 @@ export default {
     </div>
   </section>
 </template>
+
+<style lang="scss">
+.l-section {
+  margin-bottom: 1.5rem;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+}
+</style>

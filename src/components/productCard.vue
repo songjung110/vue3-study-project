@@ -26,3 +26,16 @@ export default {
     </div>
   </article>
 </template>
+
+<style lang="scss">
+.card {
+  display: inline-block;
+  width: 50%;
+  padding: &__img {
+    position: relative;
+    width: 100%;
+    height: 20rem;
+    background: pink;
+  }
+}
+</style>
